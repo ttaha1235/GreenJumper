@@ -1,15 +1,5 @@
 {
-  "functions": {
-    "api/youtube.js": {
-      "maxDuration": 10
-    },
-    "api/player-locations.js": {
-      "maxDuration": 20
-    },
-    "api/coverage.js": {
-      "maxDuration": 30
-    }
-  },
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "headers": [
     {
       "source": "/api/youtube",
@@ -35,6 +25,15 @@
         {
           "key": "Cache-Control",
           "value": "s-maxage=120, stale-while-revalidate=600"
+        }
+      ]
+    },
+    {
+      "source": "/api/channel-stats",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "s-maxage=900, stale-while-revalidate=3600"
         }
       ]
     }
