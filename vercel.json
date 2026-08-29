@@ -1,0 +1,42 @@
+{
+  "functions": {
+    "api/youtube.js": {
+      "maxDuration": 10
+    },
+    "api/player-locations.js": {
+      "maxDuration": 20
+    },
+    "api/coverage.js": {
+      "maxDuration": 30
+    }
+  },
+  "headers": [
+    {
+      "source": "/api/youtube",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "s-maxage=600, stale-while-revalidate=3600"
+        }
+      ]
+    },
+    {
+      "source": "/api/player-locations",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "s-maxage=21600, stale-while-revalidate=86400"
+        }
+      ]
+    },
+    {
+      "source": "/api/coverage",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "s-maxage=120, stale-while-revalidate=600"
+        }
+      ]
+    }
+  ]
+}
